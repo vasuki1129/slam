@@ -29,19 +29,6 @@ void printHelp()
     std::cout << "HELP:\nya don't get no help buddy, figure it out\n";
 }
 
-void loadConfiguration()
-{
-    const fs::path slamFile{"sandbox"};
-    if(fs::exists(slamFile))
-    {
-        //attempt to SLAM
-    }
-    else
-    {
-        insultError("couldn't find the slam configuration. ");
-    }
-}
-
 
 std::string exec(const char* cmd)
 {
@@ -62,10 +49,8 @@ std::string exec(const char* cmd)
 
 void slamUp()
 {
-
     std::string c = "git add .";
     std::cout << exec(c.c_str()) << "\n";
-
     //load dis jawn from the config
     std::string command;
     command = "git commit -a -m \"SLAMMING!\"";
