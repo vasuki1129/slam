@@ -5,9 +5,7 @@
 #include <time.h>
 #include <cstring>
 #include <iostream>
-#include <filesystem>
 #include <string>
-namespace fs = std::filesystem;
 
 std::string strings[] =
 {
@@ -27,7 +25,6 @@ void printHelp()
 {                     //nyaaaaaaaaaaaaaaa
     std::cout << "HELP:\nya don't get no help buddy, figure it out\n";
 }
-
 
 std::string exec(const char* cmd)
 {
@@ -50,7 +47,6 @@ void slamUp()
 {
     std::string c = "git add .";
     std::cout << exec(c.c_str()) << "\n";
-    //load dis jawn from the config
     std::string command;
     command = "git commit -a -m \"SLAMMING!\"";
     std::cout << "Slamming UP!\n";
