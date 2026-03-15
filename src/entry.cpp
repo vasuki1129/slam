@@ -43,6 +43,21 @@ std::string exec(const char* cmd)
 }
 
 
+
+void slamUpMessage(char* message)
+{
+    std::string c = "git add .";
+    std::cout << exec(c.c_str()) << "\n";
+    std::string command;
+    command = std::string("git commit -a -m \"") + message + std::string("\""); 
+    std::cout << "Slamming UP!\n";
+    std::cout << exec(command.c_str()) << "\n";
+    std::string command2;
+    command2 = "git push";
+    std::cout << exec(command2.c_str()) << "\n";
+}
+
+
 void slamUp()
 {
     std::string c = "git add .";
@@ -74,7 +89,7 @@ int main(int argc, char** argv)
     {
         printHelp();
     }
-    else
+    else if(argc == 2)
     {
         char* command = argv[1];
         if(strcmp(command,"up") == 0)
@@ -84,6 +99,20 @@ int main(int argc, char** argv)
         else if(strcmp(command,"down") == 0)
         {
             slamDown();
+        }
+        else
+        {
+            insultError("invalid command. ");
+        }
+    }
+    else
+    {
+
+        char* command = argv[1];
+        char* message = argv[2];
+        if(strcmp(command,"up") == 0)
+        {
+            slamUpMessage(message);
         }
         else
         {
